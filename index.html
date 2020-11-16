@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width;scale=1">
 <meta name="author" content="Wanderlei Silva do Carmo">
 <meta name="version" content="1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.2/sass.js" integrity="sha512-qN7eI/gyKBObAOLw/VOd8eDV4eR/Mp9gebkx0IqCpV5p7LYz0RCQHJahUwR+UB5W+BaphKRDz3eeqL11mGgIrQ==" crossorigin="anonymous"></script>
+
 <title>Aprendendo HTML básico</title>
 
 <!-- Para utilizar um css externo  -->
@@ -17,6 +20,7 @@
 <style type="text/css">
 
 </style>
+
 
 </head>
 <body>
@@ -32,7 +36,7 @@
 <!-- barra de navegação -->
 <nav>
 <ul>
-    <li>Sistema</li>
+    <li >Sistema</li>
 	<li>Relatórios
 	  <ul>
 	     <li>Frequência</li>
@@ -46,20 +50,22 @@
 
 </nav>
 
+<div id="mensagem"></div>
+
 <div class="container">
 <aside class="aside">
    
    <div class="menu">
       <ul><h2> Menu </h2>
-	     <li> Cursos </li>
-		 <li> Professores </li>
-		 <li> Disciplinas </li>
-		 <li> Alunos </li>
+	     <li onclick="carregarPagina('cursos');"> Cursos </li>
+		 <li onclick="carregarPagina('professores');"> Professores </li>
+		 <li onclick="carregarPagina('disciplinas');"> Disciplinas </li>
+		 <li onclick="carregarPagina('alunos');"> Alunos </li>
 	  </ul>
    </div>
 </aside>
 
-<main class="main">
+<main class="main" id="content">
 	<h1 class="titulo"> Curso Java Web </h1>
 	<h1 class="subtitulo" > Alunos Matriculados </h1>
 
@@ -152,6 +158,29 @@
    </div>
 </footer>
 
+
+
+<!-- javascript interno -->
+<script type="text/javascript">
+
+var mensagem = document.getElementById("mensagem");
+ mensagem.innerHTML = "Texto injetado dinamicamente pelo javascript";
+ mensagem.style.backgroundColor = "red";
+ mensagem.style.color = "white";
+ mensagem.style.cursor = "pointer";
+ 
+ mensagem.addEventListener('click', function(){
+      alert('A caixa de mensagem foi clicada');
+	  var nome = prompt("Qual o seu nome? ");
+	  this.innerHTML = "Seja bem vindo " + nome ;
+  });
+
+
+</script>
+
+<!-- javascript externo -->
+<script type="text/javascript" 
+        src="assets/js/app.js"></script>
 
 </body>
 
