@@ -1,0 +1,17 @@
+
+.menu {
+   li{
+      color: red;
+	  
+	  ul{
+	      background-color: black;
+		  color: white;
+		  
+		  li{
+		      &hover{
+			    dfgagfds
+			  }
+		  }
+	  }
+   }
+}
